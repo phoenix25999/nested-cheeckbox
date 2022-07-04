@@ -1,0 +1,93 @@
+.tab {
+  width: fit-content;
+  color: #5c5c5c;
+  overflow: hidden;
+  margin-bottom: 15px;
+  position: relative;
+
+  ~.checkbox-wrapper {
+    .horizontal-line {
+      display: none;
+    }
+  }
+
+  .border {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: calc(100% - 32px);
+    width: 1px;
+    border-left: 1px dashed #eee;
+    left: 47.5px;
+    top: 15px;
+    z-index: 1;
+  }
+
+
+  .tab-label {
+    cursor: pointer;
+
+    &.accordion-label {
+      &::before {
+        content: '+';
+        display: inline-block;
+        border: 1px solid #eee;
+        position: relative;
+        left: -30px;
+        border-radius: 100%;
+        padding: 1px 5px;
+      }
+    }
+  }
+
+  .tab-content {
+    max-height: 0;
+    padding: 0 26px;
+    color: #5c5c5c;
+    background: white;
+    transition: all .35s;
+    position: relative;
+  }
+}
+
+.accordion-checkbox {
+
+  &:checked {
+    ~.tab-label {
+      &::before {
+        content: "-";
+        padding: 1px 7px 3px;
+      }
+    }
+
+    ~.tab-content {
+      max-height: 100vh;
+      padding: 0;
+      margin: 27px 26px;
+    }
+  }
+}
+
+.accordion-checkmark {
+  display: inline-block;
+  position: relative !important;
+  top: 3px !important;
+  left: 40px !important;
+}
+
+.accordion-checkmark:hover {
+  background-color: #e7e7e7;
+}
+
+
+input:checked~.accordion-checkmark:after {
+  display: block;
+}
+
+.accordion-checkmark:after {
+  inset: 2px;
+  height: 9px;
+  width: 9px;
+  border-radius: 100%;
+  background: rgb(62, 209, 153);
+}

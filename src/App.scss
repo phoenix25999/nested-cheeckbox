@@ -1,4 +1,26 @@
-.heading,.sub-heading{
-    // color:green;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: #eee;
+}
+
+h1 {
     text-align: center;
+    padding: 20px;
+}
+
+.app-body {
+    background: #fff;
+    height: 85vh;
+    width: 20%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 30px;
+    border-radius: 10px;
 }
